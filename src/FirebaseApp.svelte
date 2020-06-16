@@ -12,7 +12,7 @@
   const dispatch = createEventDispatcher();
 
     // Set firebase context
-    firebase = firebase || window.firebase;
+    firebase = firebase || (typeof window !== "undefined" ? window.firebase : undefined);
     setContext("firebase", firebase);
 
   onMount(() => {
